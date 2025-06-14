@@ -1,0 +1,23 @@
+version: '3.8'  # Using recent docker-compose version for modern features
+
+services:
+  meep:
+    build: 
+      context: .  # Builds using Dockerfile in current directory
+      dockerfile: Dockerfile
+    volumes:
+      - ./code:/code  # Maps local ./code directory to container's /code
+      - ./data:/code/data  # Optional: separate data directory for simulation results
+    ports:
+      - "8888:8888"
+    working_dir: /code
+    # Enable interactive terminal for running Python scripts
+    stdin_open: true  
+    tty: true
+    # Optional but recommended resource constraints
+    deploy:
+      resources:
+        limits:
+          memory: 10G  # Adjust based on your simulation needs
+        reservations:
+          memory: 5G  # Minimum memory reservation

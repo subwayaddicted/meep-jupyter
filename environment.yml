@@ -1,0 +1,13 @@
+name: meep-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9  # MEEP works well with Python 3.9
+  - pymeep
+  - pymeep-extras
+  - numpy  # Required for numerical operations
+  - matplotlib  # For visualization
+  - h5py  # For working with HDF5 files
+  - scipy  # Often needed for scientific computing
+  - jupyter  # For running notebooks

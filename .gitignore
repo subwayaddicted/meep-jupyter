@@ -1,0 +1,5 @@
+data/output/**
+data/.ipynb_checkpoints/**
+
+code/.Trash-0/**
+code/Nektarin/**
